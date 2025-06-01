@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "888683783000",
+    "project_id": "colorblockpuzzle-e4fee",
+    "storage_bucket": "colorblockpuzzle-e4fee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888683783000:android:ef73dc50ed7e04b4f63b2d",
+        "android_client_info": {
+          "package_name": "com.colorbloackgame.nut"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8YUUZGg-2Mfg6kggF782CncJm-MXekns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

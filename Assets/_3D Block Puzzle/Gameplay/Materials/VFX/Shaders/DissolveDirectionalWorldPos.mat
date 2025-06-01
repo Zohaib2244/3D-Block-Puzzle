@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DissolveDirectionalWorldPos
+  m_Shader: {fileID: 4800000, guid: 0f84b02409fc0ce44958226ff68a11d6, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _USE_SPECULAR
+  m_InvalidKeywords:
+  - _DISSOLVE_AXIS_X
+  - _ENABLESPECULAR_ON
+  - _USEAMBIENT_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AmbientIntensity: 0.49
+    - _BrightnessMultiplier: 1.52
+    - _DISSOLVE_AXIS: 0
+    - _DissolveLength: 0.017
+    - _DissolveStart: 0.2
+    - _EdgeIntensity: 0.446
+    - _EdgeThickness: 0.187
+    - _EnableSpecular: 1
+    - _FlipDissolveAxis: 0
+    - _FresnelPower: 1.5
+    - _NoiseScale: 1
+    - _ReceiveShadows: 0
+    - _Smoothness: 0.5
+    - _SpecularPower: 1
+    - _SpecularStrength: 1
+    - _UseAmbient: 1
+    - _UseSpecular: 1
+    m_Colors:
+    - _BaseColor: {r: 0.09411765, g: 0.5176471, b: 0.9254902, a: 1}
+    - _EdgeColor: {r: 1, g: 1, b: 0, a: 1}
+    - _GateDirection: {r: 1, g: 0, b: 0, a: 0}
+    - _GatePosition: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.43529412, g: 0.43529412, b: 0.43529412, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

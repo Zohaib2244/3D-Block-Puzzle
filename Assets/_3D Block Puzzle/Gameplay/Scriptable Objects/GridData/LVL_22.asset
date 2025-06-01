@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca693f9ab3450c4ab6029353d696b13, type: 3}
+  m_Name: LVL_22
+  m_EditorClassIdentifier: 
+  gridWidth: 8
+  gridLength: 9
+  cellSize: 0.57
+  gridStartPosition: {x: 0, y: 0, z: 0}
+  gateData:
+    gateObjects: []
+    gateColorTypes: 
+    gateDirections: 
+    gatePositionCounts: 
+    gatePositionsX: 
+    gatePositionsZ: 
+  dirtyFlag: 1
+  lastModification: 'Modified: 5/25/2025 5:01:26 PM
+
+    Reason: Initialize called
+
+    In
+    play mode: False'
+  gridData:
+    occupiedCells: 010101010101010101000000000000010100000000000001010000000000000101000000000000010100000000000001010000000000000101000000000000010101010101010101
+    wallCells: 010101010101010101000000000000010100000000000001010000000000000101000000000000010100000000000001010000000000000101000000000000010101010101010101

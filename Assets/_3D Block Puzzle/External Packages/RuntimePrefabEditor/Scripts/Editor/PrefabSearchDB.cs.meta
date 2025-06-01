@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c4efa7759aea2ea45bf264d6724e1d6d
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 24895
+  packageName: Prefab Editor
+  packageVersion: 1.0.0
+  assetPath: Assets/RuntimePrefabEditor/Scripts/Editor/PrefabSearchDB.cs
+  uploadId: 221068
