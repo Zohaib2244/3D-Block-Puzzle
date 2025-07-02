@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2321580486441455020}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0443, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 4843979738308116013}
   - component: {fileID: 6756149881689860046}
   - component: {fileID: 1906401767390976315}
-  - component: {fileID: -4047592605606109464}
   m_Layer: 2
   m_Name: GridCell
   m_TagString: Untagged
@@ -197,16 +196,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-4047592605606109464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7213934350657495362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64d42e266f63f5d48938b02d8e9afed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellPosition: {x: 0, y: 0}

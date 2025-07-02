@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DarkGreen
+  m_Name: DarkCyan
   m_Shader: {fileID: 4800000, guid: 0f84b02409fc0ce44958226ff68a11d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -135,7 +135,7 @@ Material:
     - _ZDissolveControl: 0.9
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.15094051, g: 0.3490566, b: 0.0115254605, a: 1}
+    - _BaseColor: {r: 0, g: 0.7264151, b: 0.52231175, a: 1}
     - _Color: {r: 0.15094048, g: 0.34905657, b: 0.0115254605, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}

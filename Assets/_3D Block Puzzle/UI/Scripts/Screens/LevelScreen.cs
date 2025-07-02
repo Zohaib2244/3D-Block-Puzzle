@@ -14,21 +14,27 @@ public class LevelScreen : MonoBehaviour
     private bool isTimerFrozen = false;
     private Sequence freezeTimerSequence;
 
-    public void StartLevelTime(int levelTime)
+    public void InitLevelTime(int levelTime)
     {
         StopTimer();
-        DebugLogger.Log("Starting level : " + (GameConstants.CurrentLevelIndex + 1), DebugColor.Purple);
         levelText.text = "Level " + (GameConstants.CurrentLevelIndex + 1);
         this.levelTime = levelTime;
-        animationTimeOffset = 0f;
+        animationTimeOffset = 0f; // Reset animation offset
+        UpdateTimerDisplay();
+    }
+    public void StartLevelTime()
+    {
+        // levelText.text = "Level " + (GameConstants.CurrentLevelIndex + 1);
+        // this.levelTime = levelTime;
+        // animationTimeOffset = 0f;
         StartTimer();
     }
-    
-    void StartTimer()
+
+    public void StartTimer()
     {
         // Reset timer variables
         UpdateTimerDisplay();
-        
+
         // Reset clock hand position
         if (clockHandTransform != null)
         {
@@ -36,7 +42,7 @@ public class LevelScreen : MonoBehaviour
             DOTween.Kill(clockHandTransform);
             clockHandTransform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-    
+
         // Create a sequence that repeats until stopped
         DOTween.Sequence()
             .AppendCallback(() =>
@@ -46,13 +52,13 @@ public class LevelScreen : MonoBehaviour
                 {
                     levelTime--;
                     UpdateTimerDisplay();
-    
+
                     // Check if timer is low to trigger warning animations
                     if (levelTime <= 15)
                     {
                         AnimateTimerWarning();
                     }
-    
+
                     // Check if timer reached zero
                     if (levelTime <= 0)
                     {
@@ -64,21 +70,21 @@ public class LevelScreen : MonoBehaviour
             .SetLoops(-1) // Repeat indefinitely
             .SetId("LevelTimer"); // Give it an ID so we can kill it later
     }
-    
+
     private void UpdateTimerDisplay()
     {
         // Format time as M:SS
         int minutes = levelTime / 60;
         int seconds = levelTime % 60;
         levelTimeText.text = $"{minutes}:{seconds:00}";
-        
+
         // Update clock hand rotation if it exists
         if (clockHandTransform != null)
         {
             // Determine which quarter position to show (0, 90, 180, or 270 degrees)
             int quarterPosition = seconds % 4; // Will give 0, 1, 2, or 3
             float rotation = quarterPosition * 90f; // Convert to 0, 90, 180, or 270 degrees
-            
+
             DebugLogger.Log($"Clock hand rotation: {rotation} degrees", DebugColor.Green);
             // Snap to the quarter position (12, 3, 6, or 9 o'clock)
             clockHandTransform.localRotation = Quaternion.Euler(0, 0, rotation);
@@ -116,6 +122,8 @@ public class LevelScreen : MonoBehaviour
 
         GameManager.Instance.LevelFailed();
     }
+
+    #region Timer Control
     public void PauseTimer()
     {
         DOTween.Kill("LevelTimer");
@@ -147,7 +155,7 @@ public class LevelScreen : MonoBehaviour
 
         ResetTimer();
     }
-    
+   
     void ResetTimer()
     {
         levelTime = 0;
@@ -157,6 +165,8 @@ public class LevelScreen : MonoBehaviour
         levelTimeText.transform.localScale = Vector3.one;
         isTimerFrozen = false;
     }
+     #endregion
+    #region PowerUps
 
     /// <summary>
     /// Adds the specified amount of seconds to the timer
@@ -165,33 +175,33 @@ public class LevelScreen : MonoBehaviour
     public void AddTime(int secondsToAdd)
     {
         if (secondsToAdd <= 0) return;
-        
+
         // Add time to the actual game timer
         levelTime += secondsToAdd;
         UpdateTimerDisplay();
-        
+
         // Visual feedback for adding time
         DOTween.Kill("TimeAddAnimation");
-        
+
         // Animation timing constants
         float animDuration = 0.8f; // Total animation duration
-        
+
         // Create a sequence for the time add animation
         Sequence addTimeSequence = DOTween.Sequence();
-        
+
         // Store original color
         Color originalColor = levelTimeText.color;
-        
+
         // Flash green and scale up/down
         addTimeSequence.Append(levelTimeText.DOColor(Color.green, animDuration * 0.375f));
         addTimeSequence.Join(levelTimeText.transform.DOScale(1.3f, animDuration * 0.375f));
         addTimeSequence.AppendInterval(animDuration * 0.25f);
         addTimeSequence.Append(levelTimeText.DOColor(originalColor, animDuration * 0.375f));
         addTimeSequence.Join(levelTimeText.transform.DOScale(1f, animDuration * 0.375f));
-        
+
         addTimeSequence.SetId("TimeAddAnimation");
     }
-    
+
     /// <summary>
     /// Freezes the timer for the specified duration
     /// </summary>
@@ -199,30 +209,30 @@ public class LevelScreen : MonoBehaviour
     public void FreezeTimer(float freezeDuration)
     {
         if (freezeDuration <= 0 || isTimerFrozen) return;
-        
+
         // Stop any existing freeze sequence
         if (freezeTimerSequence != null)
         {
             freezeTimerSequence.Kill();
         }
-        
+
         // Set flag to prevent timer from counting down
         isTimerFrozen = true;
-        
+
         // Animation transition times
         float fadeInTime = 0.3f;
         float fadeOutTime = 0.3f;
-        
+
         // Visual feedback for freezing time
         DOTween.Kill("TimeFreezeAnimation");
-        
+
         // Create a sequence for the freeze animation
         Sequence freezeAnimation = DOTween.Sequence();
-        
+
         // Make timer text blue while frozen
         Color originalColor = levelTimeText.color;
         freezeAnimation.Append(levelTimeText.DOColor(Color.cyan, fadeInTime));
-        
+
         // Slow pulse while frozen
         freezeAnimation.Join(
             DOTween.Sequence()
@@ -230,22 +240,23 @@ public class LevelScreen : MonoBehaviour
             .Append(levelTimeText.transform.DOScale(1f, 0.8f))
             .SetLoops(-1)
         );
-        
+
         freezeAnimation.SetId("TimeFreezeAnimation");
-        
+
         // Create a sequence to unfreeze after the duration
         freezeTimerSequence = DOTween.Sequence();
         freezeTimerSequence.AppendInterval(freezeDuration);
         freezeTimerSequence.AppendCallback(() => {
             // Unfreeze timer
             isTimerFrozen = false;
-            
+
             // Stop freeze animation
             DOTween.Kill("TimeFreezeAnimation");
-            
+
             // Return to normal color
             levelTimeText.DOColor(originalColor, fadeOutTime);
             levelTimeText.transform.DOScale(1f, fadeOutTime);
         });
     }
+    #endregion
 }

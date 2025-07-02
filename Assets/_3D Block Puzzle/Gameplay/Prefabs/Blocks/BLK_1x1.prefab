@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7335485102389087468}
   - component: {fileID: 4759510441760399674}
   - component: {fileID: 3563152775470984386}
-  - component: {fileID: -4723118018067296610}
+  - component: {fileID: 1233986258963477202}
   m_Layer: 0
   m_Name: BLK_1x1
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.83, y: 0.83, z: 0.83}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4492167972992309156}
-  m_Mesh: {fileID: -5741174448488666723, guid: 1115aa88dc192b5419e1e359542c5167, type: 3}
+  m_Mesh: {fileID: -2661162599146445991, guid: 97cc5f6ca9faf05488f8a74b9b6232ed, type: 3}
 --- !u!23 &725309124554585074
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shape: {fileID: 11400000, guid: 94359d366b278584bafb681fcacb6ce8, type: 2}
   blockColor: 0
-  yPos: 0
+  yPos: 0.27
   outline: {fileID: 3563152775470984386}
   OnBlockPlaced:
     m_PersistentCalls:
@@ -141,7 +141,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!65 &-4723118018067296610
+--- !u!65 &1233986258963477202
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,5 +160,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.2253423, y: 0.9138587, z: 2.2253423}
-  m_Center: {x: 0, y: 0.19481233, z: 0}
+  m_Size: {x: 0.6494574, y: 0.34170604, z: 0.64945555}
+  m_Center: {x: -0.00000029802322, y: -0.0631276, z: -0.0000085532665}

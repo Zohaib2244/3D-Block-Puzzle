@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour
         gridManager.onGridInitialized.AddListener(InitLevel);
         GameUIManager.Instance.ShowScreen(ScreenType.GamePlay);
         SpawnLevel();
+        GameUIManager.Instance.LevelScreen.InitLevelTime(levelTime);
     }
     void OnDestroy()
     {
@@ -32,7 +33,8 @@ public class LevelManager : MonoBehaviour
         {
             if (!_levelTimerStarted)
             {
-                GameUIManager.Instance.LevelScreen.StartLevelTime(levelTime);
+                // GameUIManager.Instance.LevelScreen.StartLevelTime(levelTime);
+                GameUIManager.Instance.LevelScreen.StartTimer();
                 _levelTimerStarted = true;
             }
         });

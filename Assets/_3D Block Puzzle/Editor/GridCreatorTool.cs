@@ -1213,7 +1213,6 @@ public class GridCreatorTool : EditorWindow
                 renderer.material = gridCellMaterial_2;
             }
         }
-        cell.GetComponent<CellObject>().CellPosition = new Vector2Int(x, z);
     }
     #endregion
 }

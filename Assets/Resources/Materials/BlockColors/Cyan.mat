@@ -21,8 +21,7 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -44,6 +43,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -89,10 +92,10 @@ Material:
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _AlphaToMask: 0
-    - _AmbientIntensity: 0.49
+    - _AmbientIntensity: 0.294
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _BrightnessMultiplier: 1.5
+    - _BrightnessMultiplier: 1.17
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -100,13 +103,20 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Dissolve: 0.5
+    - _DissolveAxis: 1
     - _DissolveLength: 0.017
+    - _DissolveRange: 0.1
     - _DissolveStart: 0
+    - _DissolveThreshold: 0.5
+    - _DissolveWidth: 0.02
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EdgeIntensity: 1
     - _EdgeThickness: 0.1
     - _EnvironmentReflections: 1
+    - _FlipDirection: 0
+    - _FresnelPower: 4
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -115,10 +125,11 @@ Material:
     - _NoiseScale: 0.088
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PlasticReflectivity: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
-    - _Smoothness: 0
+    - _Smoothness: 0.41
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularPower: 64
@@ -135,7 +146,7 @@ Material:
     - _ZDissolveControl: 0.9
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.09411765, g: 0.72156864, b: 0.9254902, a: 1}
+    - _BaseColor: {r: 0.58406013, g: 0.8286994, b: 0.990566, a: 1}
     - _Color: {r: 0.094117604, g: 0.72156864, b: 0.9254902, a: 1}
     - _EdgeColor: {r: 1, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}

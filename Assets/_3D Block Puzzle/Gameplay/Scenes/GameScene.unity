@@ -719,7 +719,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523440052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00011576}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -728,8 +728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -161.6, y: 2.5198975}
-  m_SizeDelta: {x: 117.4, y: 124.01}
+  m_AnchoredPosition: {x: -97.6, y: 0}
+  m_SizeDelta: {x: 70.37, y: 84.357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &523440054
 MonoBehaviour:
@@ -1101,7 +1101,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898107434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00011576}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1111,8 +1111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000038147, y: -219}
-  m_SizeDelta: {x: 490.3, y: 157.2}
+  m_AnchoredPosition: {x: 0.000048161, y: -203.3}
+  m_SizeDelta: {x: 300.2, y: 114.68}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &898107436
 MonoBehaviour:
@@ -1136,7 +1136,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 47a4417a5c78b3142941212277d35011, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -2353,7 +2353,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2123476711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00024777188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2361,8 +2361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
-  m_SizeDelta: {x: 23.7, y: 47.4}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0.00000047683716}
+  m_SizeDelta: {x: 15.051, y: 30.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2123476713
 MonoBehaviour:
@@ -2729,8 +2729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 75, y: -0.000045776367}
-  m_SizeDelta: {x: -181.5, y: -47.7}
+  m_AnchoredPosition: {x: 44.59, y: -0.000045776367}
+  m_SizeDelta: {x: -120.68, y: -47.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1025687463590058216
 GameObject:
@@ -3168,15 +3168,16 @@ MonoBehaviour:
   bottomRightCornerLevelButtonPrefab: {fileID: 5289687713880928807, guid: 09e14bfc7d29c1248aa8dec456c78f92,
     type: 3}
   unlockedLevelButtonColors:
-  - {r: 1, g: 0.5330188, b: 0.5330188, a: 1}
-  - {r: 1, g: 0.94267213, b: 0.6179246, a: 1}
-  - {r: 0.7321268, g: 1, b: 0.6650944, a: 1}
-  - {r: 0.4764151, g: 0.9808704, b: 1, a: 1}
-  - {r: 0.990566, g: 0.5934051, b: 0.77612525, a: 1}
-  - {r: 1, g: 0.7321864, b: 0.4764151, a: 1}
-  - {r: 0.48991832, g: 0.4669811, b: 1, a: 1}
+  - {r: 0.9607843, g: 0.36862746, b: 0.36862746, a: 1}
+  - {r: 1, g: 0.8901961, b: 0.29803923, a: 1}
+  - {r: 0.5058824, g: 1, b: 0.38039216, a: 1}
+  - {r: 0.23921569, g: 0.85490197, b: 1, a: 1}
+  - {r: 1, g: 0.3529412, b: 0.6509804, a: 1}
+  - {r: 1, g: 0.6392157, b: 0.28627452, a: 1}
+  - {r: 0.2901961, g: 0.25882354, b: 1, a: 1}
   - {r: 0, g: 0.45917034, b: 1, a: 1}
-  - {r: 1, g: 0.60147667, b: 0.514151, a: 1}
+  - {r: 1, g: 0.4392157, b: 0.31764707, a: 1}
+  - {r: 1, g: 0.34509805, b: 0.34509805, a: 1}
   lockedButtonColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   nextPageButton: {fileID: 1774038051198743322}
   prevPageButton: {fileID: 5580346345055863555}
@@ -4359,7 +4360,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.45
+  m_fontSize: 55.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

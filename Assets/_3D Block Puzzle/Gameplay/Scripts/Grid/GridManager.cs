@@ -24,6 +24,7 @@ public class GridManager : MonoBehaviour
         get { return wallParent; }
         set { wallParent = value; }
     }
+    public Transform CellParent; // Parent object for cells
     private int gridWidth = 10; // Number of columns in the grid
     private int gridLength = 10; // Number of rows in the griZS
     private Vector3 gridStartPosition; // Starting position of the grid
@@ -39,6 +40,7 @@ public class GridManager : MonoBehaviour
     [Header("Blocks & Gates")]
     [SerializeField] private List<Block> placedBlocks = new List<Block>();
     [SerializeField] private List<Gate> gates = new List<Gate>();
+    private HashSet<GateObject> gatesDown = new HashSet<GateObject>();
     public List<Gate> GetGates() => gates;
 
 
@@ -50,7 +52,7 @@ public class GridManager : MonoBehaviour
 
 
     private Dictionary<Vector2Int, GameObject> wallRegistry = new Dictionary<Vector2Int, GameObject>();
-    private Dictionary<Vector2Int, CellObject> cellRegistry = new Dictionary<Vector2Int, CellObject>();
+    private Dictionary<Vector2Int, GameObject> cellRegistry = new Dictionary<Vector2Int, GameObject>();
     private bool[,] cellOccupied;
 
     private bool[,] cellIsWall;
@@ -409,7 +411,6 @@ public class GridManager : MonoBehaviour
             wallRegistry[gridPos] = wall;
         }
     }
-
     // This should be called after all grid cells are created in the editor
     public void InitializeGridFromChildren()
     {
@@ -1044,8 +1045,11 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
-
-        gate.gateObject.MoveDown(); // Move the gate down
+        if (!gatesDown.Contains(gate.gateObject))
+        {
+            gate.gateObject.MoveDown();
+            gatesDown.Add(gate.gateObject);
+        }
 
         DOVirtual.DelayedCall(0.2f, () =>
         {
@@ -1102,9 +1106,14 @@ public class GridManager : MonoBehaviour
                         placedBlocks.Remove(block);
                         onBlockRemoved.Invoke(); // Notify that a block has been removed
                         Destroy(block.gameObject);
-                        //* Play Feel
+                        //* Play Feedback
                         Vibrations.Haptic(HapticTypes.Success);
-                        gate.gateObject.MoveUp(); // Move the gate back up
+                        // Move the gate back up and remove from set
+                        if (gatesDown.Contains(gate.gateObject))
+                        {
+                            gate.gateObject.MoveUp();
+                            gatesDown.Remove(gate.gateObject);
+                        }
                     }
                 });
         });
@@ -1395,5 +1404,5 @@ public class GridManager : MonoBehaviour
 
         return positions;
     }
-  #endregion
+    #endregion
 }

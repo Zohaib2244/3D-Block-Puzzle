@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shape: {fileID: 11400000, guid: 09eb2229a5297aa42ac0172b8e087bfa, type: 2}
   blockColor: 1
-  yPos: 0.12
+  yPos: 0.23
   outline: {fileID: 8221562895554975551}
   OnBlockPlaced:
     m_PersistentCalls:

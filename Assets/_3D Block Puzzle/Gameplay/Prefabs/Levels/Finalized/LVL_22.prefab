@@ -304,6 +304,7 @@ MonoBehaviour:
   savedGridData: {fileID: 11400000, guid: efaac79039cda8e4a879ab4792e8ca7a, type: 2}
   gridSpacing: 0.57
   wallParent: {fileID: 8511852757490020953}
+  CellParent: {fileID: 0}
   placedBlocks:
   - {fileID: 4359312267282257884}
   - {fileID: 1695631039384334243}
