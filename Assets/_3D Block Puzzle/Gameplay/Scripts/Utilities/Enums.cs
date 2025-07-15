@@ -10,7 +10,7 @@ public enum BlockColorTypes
     Green,
     Purple,
     Pink,
-    DarkGreen
+    Teal
 }
 
 public static class EnumExtensions

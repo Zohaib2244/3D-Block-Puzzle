@@ -103,6 +103,14 @@ public class LevelManager : MonoBehaviour
         GetGridReference();
         SetCamera();
 
+
+
+        //* Position The Grid and The LevelManager
+        Vector3 gridCentre = gridManager.GetGridCentrePosition();
+        Vector3 gridWorldPosition = gridManager.transform.position;
+        transform.position = new Vector3(gridCentre.x, transform.position.y, gridCentre.z);
+        gridManager.transform.position = gridWorldPosition;
+        
         // If this is part of a prefab, apply changes to the prefab
         if (PrefabUtility.IsPartOfPrefabInstance(gameObject))
         {

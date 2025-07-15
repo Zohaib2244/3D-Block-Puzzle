@@ -46,7 +46,7 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0",
     "com.google.external-dependency-manager": "file:Custom/com.google.external-dependency-manager.tgz",
-    "com.google.firebase.app": "file:Custom/com.google.firebase.app.tgz",
-    "com.google.firebase.analytics": "file:Custom/com.google.firebase.analytics.tgz"
+    "com.google.firebase.analytics": "file:Custom/com.google.firebase.analytics.tgz",
+    "com.google.firebase.app": "file:Custom/com.google.firebase.app.tgz"
   }
 }

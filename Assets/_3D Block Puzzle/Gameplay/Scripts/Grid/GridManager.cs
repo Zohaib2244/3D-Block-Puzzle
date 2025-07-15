@@ -24,7 +24,6 @@ public class GridManager : MonoBehaviour
         get { return wallParent; }
         set { wallParent = value; }
     }
-    public Transform CellParent; // Parent object for cells
     private int gridWidth = 10; // Number of columns in the grid
     private int gridLength = 10; // Number of rows in the griZS
     private Vector3 gridStartPosition; // Starting position of the grid
@@ -52,7 +51,6 @@ public class GridManager : MonoBehaviour
 
 
     private Dictionary<Vector2Int, GameObject> wallRegistry = new Dictionary<Vector2Int, GameObject>();
-    private Dictionary<Vector2Int, GameObject> cellRegistry = new Dictionary<Vector2Int, GameObject>();
     private bool[,] cellOccupied;
 
     private bool[,] cellIsWall;
@@ -494,17 +492,30 @@ public class GridManager : MonoBehaviour
 
             // Record modifications to the parent prefab instance
             UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(prefabRoot);
-        }
 
-        // Mark the scene as dirty
-        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+            // Mark the scene as dirty
+            UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
 
-        // Save prefab changes
-        GameObject prefabAsset = UnityEditor.PrefabUtility.GetCorrespondingObjectFromSource(prefabRoot);
-        if (prefabAsset != null)
-        {
-            // Try to apply overrides
-            UnityEditor.PrefabUtility.ApplyPrefabInstance(prefabRoot, UnityEditor.InteractionMode.AutomatedAction);
+            // Save prefab changes
+            GameObject prefabAsset = null;
+            try
+            {
+                prefabAsset = UnityEditor.PrefabUtility.GetCorrespondingObjectFromSource(prefabRoot);
+            }
+            catch (ArgumentNullException ex)
+            {
+                Debug.LogWarning($"PrefabUtility.GetCorrespondingObjectFromSource threw an exception: {ex.Message}");
+            }
+
+            if (prefabAsset != null)
+            {
+                // Try to apply overrides
+                UnityEditor.PrefabUtility.ApplyPrefabInstance(prefabRoot, UnityEditor.InteractionMode.AutomatedAction);
+            }
+            else
+            {
+                Debug.LogWarning("Prefab asset not found for prefabRoot. Skipping ApplyPrefabInstance.");
+            }
         }
 #endif
         //?  block.OnBlockPlaced.AddListener(() => CheckGatePulls()); // Subscribe to block placement event
@@ -1403,6 +1414,13 @@ public class GridManager : MonoBehaviour
         }
 
         return positions;
+    }
+        public Vector3 GetGridCentrePosition()
+    {
+        float centreX = gridStartPosition.x + gridWidth * gridSpacing / 2f - (gridSpacing / 2f);
+        float centreZ = gridStartPosition.z + gridLength * gridSpacing / 2f - (gridSpacing / 2f);
+        Debug.DrawRay(new Vector3(centreX, gridStartPosition.y, centreZ), Vector3.up * 2f, Color.green, 5f);
+        return new Vector3(centreX, gridStartPosition.y, centreZ);
     }
     #endregion
 }

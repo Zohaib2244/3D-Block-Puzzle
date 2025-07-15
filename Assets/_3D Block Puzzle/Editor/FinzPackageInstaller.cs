@@ -54,7 +54,7 @@ public class FinzPackageInstaller : EditorWindow
     private string status = "";
     private bool isDownloading = false;
 
-    [MenuItem("Finz/Packages Manager")]
+    [MenuItem("NuttyTools/Packages Manager")]
     public static void ShowWindow()
     {
         GetWindow<FinzPackageInstaller>("Packages Manager");

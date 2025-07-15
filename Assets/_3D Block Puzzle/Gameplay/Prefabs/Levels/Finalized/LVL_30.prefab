@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridManager: {fileID: 9130695814876852628}
-  levelTime: 60
+  levelTime: 90
   cameraPosition: {x: 2.85, y: 7.615, z: 1.388}
   cameraFOV: 86.4
 --- !u!1 &4368042435568761187
@@ -324,7 +324,6 @@ MonoBehaviour:
   savedGridData: {fileID: 11400000, guid: e36f1e3f6aaafc943b737efd05181717, type: 2}
   gridSpacing: 0.57
   wallParent: {fileID: 7978441963036235617}
-  CellParent: {fileID: 0}
   placedBlocks:
   - {fileID: 4664930002215771627}
   - {fileID: 1771033330085850213}
