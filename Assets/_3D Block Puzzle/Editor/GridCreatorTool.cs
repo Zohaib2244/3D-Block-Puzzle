@@ -494,7 +494,7 @@ public class GridCreatorTool : EditorWindow
         GameObject blocksContainer = new GameObject("Blocks");
         Undo.RegisterCreatedObjectUndo(blocksContainer, "Create Blocks Container");
         blocksContainer.transform.SetParent(gridParent.transform);
-        blocksContainer.transform.localPosition = new Vector3(0f, wallHeight / 2, 0f);
+        blocksContainer.transform.localPosition = Vector3.zero;
         blocksContainer.transform.localRotation = Quaternion.identity;
 
         // Determine which cells are inside the walls
