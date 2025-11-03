@@ -5,7 +5,6 @@ public class GateObject : MonoBehaviour
 {
     public Vector2Int[] gatePosition;
     float originalY = 0f;
-    public GameObject exitVFX;
     private Tween moveTween;
     private bool isDown = false;
 

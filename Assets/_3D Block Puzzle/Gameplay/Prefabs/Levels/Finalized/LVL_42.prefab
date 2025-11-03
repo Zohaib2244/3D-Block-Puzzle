@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridManager: {fileID: 3564266001174268144}
   levelTime: 60
-  cameraPosition: {x: 1.798, y: 8.14, z: 0.417}
+  cameraPosition: {x: 1.69, y: 7.22, z: 0.12}
   cameraFOV: 60
 --- !u!1 &6062740394916715918
 GameObject:

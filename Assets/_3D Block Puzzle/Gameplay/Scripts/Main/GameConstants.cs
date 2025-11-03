@@ -8,6 +8,7 @@ public static class GameConstants
     private static List<gateColor> gateColors = new List<gateColor>();
     private static Material defaultWallMaterial;
     private static int currentLevelIndex = 0;
+    private static GateVFXSet gateVFXSet;
     public static bool inputEnabled = true;
     public static int highestUnlockedLevelIndex
     {
@@ -28,6 +29,12 @@ public static class GameConstants
             }
         }
     }
+    public static GameObject GetGateExitVFX(BlockColorTypes colorType)
+    {
+        if (gateVFXSet == null)
+            InitializeGateVFXSet();
+        return gateVFXSet.GetVFXPrefab(colorType);
+    }
     public static Material GetDefaultWallMaterial()
     {
         if (defaultWallMaterial == null)
@@ -43,6 +50,13 @@ public static class GameConstants
             InitializeGateColors();
         }
         return gateColors[(int)colorType].colorMaterial;
+    }
+    static void InitializeGateVFXSet()
+    {
+        if (gateVFXSet == null)
+        {
+            gateVFXSet = Resources.Load<GateVFXSet>("ScriptableObjects/GateVFXSet");
+        }
     }
     static void InitializeGateColors()
     {

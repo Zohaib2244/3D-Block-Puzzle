@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdaaf1da4459bca48b296856af625595, type: 3}
+  m_Name: GateVFXSet
+  m_EditorClassIdentifier: Assembly-CSharp::GateVFXSet
+  gateVFXList:
+  - colorType: 0
+    vfxPrefab: {fileID: 5757510586397800739, guid: b91acf9ed472e6a4da7afc3d83246dff,
+      type: 3}
+  - colorType: 1
+    vfxPrefab: {fileID: 2751410529314652156, guid: 133e54edd354a1d44b784e526af850d9,
+      type: 3}
+  - colorType: 2
+    vfxPrefab: {fileID: 3472774950403822480, guid: f319f46c4a54eeb4a916992c913343e7,
+      type: 3}
+  - colorType: 3
+    vfxPrefab: {fileID: 5430257852237138496, guid: eba0991016192f44e92b78c9369ca4fd,
+      type: 3}
+  - colorType: 4
+    vfxPrefab: {fileID: 5430257852237138496, guid: 183ba863a13f11d409e18f3d3ec71d3b,
+      type: 3}
+  - colorType: 5
+    vfxPrefab: {fileID: 396682067430077191, guid: d66cae6c00aba90429175c7c832dcac9,
+      type: 3}
+  - colorType: 6
+    vfxPrefab: {fileID: 5089565504144463759, guid: 541be7e2dc4fd25438dc904405fce76c,
+      type: 3}
+  - colorType: 7
+    vfxPrefab: {fileID: 7252230403123683109, guid: fce6781abc4b15b429aaf5801270d84b,
+      type: 3}
+  - colorType: 8
+    vfxPrefab: {fileID: 396682067430077191, guid: 00a1738fc956e0243a62465ac26c4bf3,
+      type: 3}

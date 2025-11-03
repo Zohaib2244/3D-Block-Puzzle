@@ -608,9 +608,6 @@ public class GridManager : MonoBehaviour
                 // Record the change only for this specific gate object instance
                 UnityEditor.Undo.RecordObject(gate.gateObject, "Assign VFX to Gate");
 
-                // Assign the VFX
-                gate.gateObject.exitVFX = gateVFX;
-
                 // Mark the gate object as dirty
                 UnityEditor.EditorUtility.SetDirty(gate.gateObject);
 
@@ -670,15 +667,12 @@ public class GridManager : MonoBehaviour
     // Add a new gate to the grid
     public Gate AddGate(BlockColorTypes colorType, List<Vector2Int> positions, Gate.GateDirection pullDirection, GateObject gateObj)
     {
-        //* Get The Gate Grid VFX
-        GameObject gateVFX = Resources.Load<GameObject>($"_3D Block Puzzle/Gameplay/VFX/BlockCrush/BlocksGrinding_{colorType}");
         // Create a new gate
         Gate gate = new(
             colorType,
             positions,
             pullDirection,
-            gateObj,
-            gateVFX
+            gateObj
         );
         gates.Add(gate);
         gateObj.gatePosition = positions.ToArray();
@@ -1092,13 +1086,10 @@ public class GridManager : MonoBehaviour
                 vfxRotation = Quaternion.Euler(-90, vfxRotation.eulerAngles.y, vfxRotation.eulerAngles.z);
 
                 //* Instantiate VFX at the gate position with the correct rotation
-                if (gate.gateObject.exitVFX != null)
-                {
-                    GameObject vfxInstance = Instantiate(gate.gateObject.exitVFX, exitPos, vfxRotation);
-
+                   GameObject vfxInstance = Instantiate(GameConstants.GetGateExitVFX(gate.colorType), exitPos, vfxRotation);
                     // Optionally control lifetime of VFX
                     Destroy(vfxInstance, 2f);
-                }
+
             }
 
             //* Play SFX

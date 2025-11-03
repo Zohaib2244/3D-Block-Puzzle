@@ -28,16 +28,12 @@ public class Gate
         West
     }
     public GateObject gateObject;
-    public Gate(BlockColorTypes colorType, List<Vector2Int> positions, GateDirection pullDirection, GateObject gateObject, GameObject exitVFX)
+    public Gate(BlockColorTypes colorType, List<Vector2Int> positions, GateDirection pullDirection, GateObject gateObject)
     {
         this.colorType = colorType;
         this.positions = positions;
         this.pullDirection = pullDirection;
         this.gateObject = gateObject;
-        if (gateObject)
-        {
-            gateObject.exitVFX = exitVFX;
-        }
     }
 }
 
@@ -58,4 +54,10 @@ public class UISCreens
     public Transform screenTransform;
     public bool showOverlay = false;
 
+}
+[Serializable]
+public struct GateVFX
+{
+    public BlockColorTypes colorType;
+    public GameObject vfxPrefab;
 }
